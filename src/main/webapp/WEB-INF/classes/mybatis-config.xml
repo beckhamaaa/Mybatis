@@ -5,9 +5,9 @@
 	<!--引入数据库配置文件-->
 	<properties resource="jdbc.properties"></properties>
 <typeAliases>
-        <typeAlias alias="User" type="com.dongdu.vo.User" />
-        <typeAlias alias="Dept" type="com.dongdu.vo.Dept" />
-        <typeAlias alias="Emp" type="com.dongdu.vo.Emp" />
+        <typeAlias alias="User" type="com.torres.mybatis.vo.User" />
+        <typeAlias alias="Dept" type="com.torres.mybatis.vo.Dept" />
+        <typeAlias alias="Emp" type="com.torres.mybatis.vo.Emp" />
 	   <!--设置别名，可以配置多个实体类-->
 </typeAliases>
 	<!-- 环境   development开发模式 work工作模式，default与id属性要保持一致-->

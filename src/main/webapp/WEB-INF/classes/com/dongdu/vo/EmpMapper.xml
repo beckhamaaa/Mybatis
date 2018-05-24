@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dongdu.vo.Emp">
+<mapper namespace="com.torres.mybatis.vo.Emp">
 	<!-- 多对一  多个员工对应一个部门 -->
 	<select id="findEmpManytoOne" resultMap="findmap">
 	    SELECT * FROM emp e,dept d WHERE e.deptno=d.deptno

@@ -4,11 +4,18 @@ import com.torres.mybatis.dao.EmpDao;
 import com.torres.mybatis.dao.impl.EmpDaoImpl;
 import com.torres.mybatis.vo.Dept;
 import com.torres.mybatis.vo.Emp;
+import lombok.extern.log4j.Log4j;
 import org.junit.Test;
 
+import java.util.Date;
 import java.util.List;
 
+@Log4j
 public class EmpTest {
+
+	public static void main(String[] args) {
+		log.info(new Date().getTime());
+	}
 
 	/**
 	 * 多对一

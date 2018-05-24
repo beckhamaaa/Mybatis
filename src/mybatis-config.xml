@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!--引入数据库配置文件-->
+	<properties resource="jdbc.properties"></properties>
+<typeAliases>
+        <typeAlias alias="User" type="com.dongdu.vo.User" />
+        <typeAlias alias="Dept" type="com.dongdu.vo.Dept" />
+        <typeAlias alias="Emp" type="com.dongdu.vo.Emp" />
+	   <!--设置别名，可以配置多个实体类-->
+</typeAliases>
+	<!-- 环境   development开发模式 work工作模式，default与id属性要保持一致-->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver.class}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${jdbc.username}" />
+				<property name="password" value="${jdbc.password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<!--引入sql映射文件，可以引入多个-->
+		<mapper resource="com/dongdu/vo/UserMapper.xml" />
+		<mapper resource="com/dongdu/vo/EmpMapper.xml" />
+	</mappers>
+</configuration>

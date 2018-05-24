@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dongdu.vo.User">
+	<!--命名空间-->
+	<select id="findByID" parameterType="int" resultType="User">
+	<!--指定命名空间-->
+	<!--parameterType 参数类型 resultType 返回类型-->
+	select * from t_user where id=#{id}
+</select>
+
+	<select id="findUserById" parameterType="int" resultType="User">
+		select * from t_user where id=#{id}
+	</select>
+
+	<insert id="addUser" parameterType="User">
+	   insert into t_user values(id,#{name},#{password},#{age},#{sex},#{birthday})
+	</insert>
+
+	<delete id="deleteUser" parameterType="int">
+	   delete from t_user where id=#{id}
+	</delete>
+
+	<update id="updateUser" parameterType="User">
+	  update t_user set name=#{name},password=#{password},age=#{age},sex=#{sex},birthday=#{birthday} where id=#{id}
+	</update>
+
+	<select id="findAll" resultType="User">
+-- 配置了别名，resultType 就不用全路径了
+--    返回值的List时，resultType为list中的元素
+	  select * from t_user
+	</select>
+
+	<select id="findUserLike" parameterType="String" resultType="User">
+	  select * from t_user where name like "%"#{name}"%"
+	</select>
+
+	<select id="findUserIn" parameterType="java.util.List" resultType="User">
+	<!--参数为list-->
+		select * from t_user where id in
+	  <foreach collection="list" index="index" item="item" open="(" separator="," close=")">  
+        #{item}
+<!--#{item}为user-->
+	  </foreach>
+	</select>
+
+	<select id="findUserDt" parameterType="User" resultType="User">
+	  select * from t_user
+	  <where>
+	  <!--<where> 相当于sql中的where-->
+	  <if test="name!=null">
+	     and name=#{name}
+	  </if>
+	  <if test="age!=null">
+	     and age=#{age}
+	  </if>
+	  </where>
+	</select>
+
+	<select id="findUserMap" parameterType="map" resultType="User">
+	   select * from t_user
+	  <where>
+	  <if test="name!=null">
+	     and name like "%"#{name}"%"
+	  </if>
+	  <if test="age!=null">
+	     and age=#{age}
+	  </if>
+	  </where>
+	  limit #{pageno},#{pagesize}
+	</select>
+
+</mapper>

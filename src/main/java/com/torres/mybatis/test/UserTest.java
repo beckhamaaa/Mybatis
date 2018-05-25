@@ -3,6 +3,7 @@ package com.torres.mybatis.test;
 import com.torres.mybatis.dao.UserDao;
 import com.torres.mybatis.dao.impl.UserDaoImpl;
 import com.torres.mybatis.vo.User;
+import lombok.extern.log4j.Log4j;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@Log4j
 public class UserTest {
 
 
@@ -67,6 +68,8 @@ public class UserTest {
         UserDao userdao = new UserDaoImpl();
 
         userdao.addUser(u);
+        log.info("新增成功");
+
     }
 
 
@@ -76,7 +79,8 @@ public class UserTest {
     @Test
     public void testDelete() {
         UserDao userdao = new UserDaoImpl();
-        userdao.deleteUser(20);
+        userdao.deleteUser(21);
+        log.info("删除成功");
     }
 
 

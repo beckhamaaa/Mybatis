@@ -17,7 +17,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>6.0.6</version>
+            <version>5.1.38</version>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
@@ -28,6 +28,13 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.25</version>
+        </dependency>
+        <!--log4j与slf4j结合，解决找不到类的错误，SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder". -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.25</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>

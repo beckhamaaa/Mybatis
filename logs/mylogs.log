@@ -1,1 +1,4 @@
 2018-05-25 00:40:40[com.torres.mybatis.test.EmpTest] [main:0] - [INFO]  1527180040908
+2018-05-25 09:29:56[com.torres.mybatis.test.UserTest] [main:0] - [INFO]  新增成功
+2018-05-25 09:37:22[com.torres.mybatis.test.UserTest] [main:0] - [INFO]  新增成功
+2018-05-25 09:41:51[com.torres.mybatis.test.UserTest] [main:0] - [INFO]  删除成功

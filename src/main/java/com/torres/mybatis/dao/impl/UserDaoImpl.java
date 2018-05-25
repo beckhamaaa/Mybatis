@@ -36,11 +36,12 @@ public class UserDaoImpl implements UserDao {
 	public void addUser(User u) {
 		SqlSession session=factory.openSession();
 		
-		session.insert("addUser", u);
+		 session.insert("addUser", u);
 		
 		session.commit();
 		
 		session.close();
+
 
 	}
 

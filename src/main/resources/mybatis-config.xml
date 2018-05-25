@@ -4,10 +4,14 @@
 <configuration>
 	<!--引入数据库配置文件-->
 	<properties resource="jdbc.properties"></properties>
+	<settings>
+		<!-- 打印查询语句 -->
+		<setting name="logImpl" value="STDOUT_LOGGING" />
+	</settings>
 <typeAliases>
-        <typeAlias alias="User" type="com.dongdu.vo.User" />
-        <typeAlias alias="Dept" type="com.dongdu.vo.Dept" />
-        <typeAlias alias="Emp" type="com.dongdu.vo.Emp" />
+        <typeAlias alias="User" type="com.torres.mybatis.vo.User" />
+        <typeAlias alias="Dept" type="com.torres.mybatis.vo.Dept" />
+        <typeAlias alias="Emp" type="com.torres.mybatis.vo.Emp" />
 	   <!--设置别名，可以配置多个实体类-->
 </typeAliases>
 	<!-- 环境   development开发模式 work工作模式，default与id属性要保持一致-->
@@ -22,9 +26,10 @@
 			</dataSource>
 		</environment>
 	</environments>
+
 	<mappers>
 		<!--引入sql映射文件，可以引入多个-->
-		<mapper resource="com/dongdu/vo/UserMapper.xml" />
-		<mapper resource="com/dongdu/vo/EmpMapper.xml" />
+		<mapper resource="sql/sqlmap/UserMapper.xml" />
+		<mapper resource="sql/sqlmap/EmpMapper.xml" />
 	</mappers>
 </configuration>

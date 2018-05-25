@@ -80,7 +80,8 @@ CREATE TABLE `t_user` (
   `password` varchar(255) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
   `sex` varchar(255) DEFAULT NULL,
-  `birthday` varchar(255) DEFAULT NULL
+  `birthday` varchar(255) DEFAULT NULL,
+	 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------

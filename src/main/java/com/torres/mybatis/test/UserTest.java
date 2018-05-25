@@ -19,7 +19,6 @@ import java.util.Map;
 @Log4j
 public class UserTest {
 
-
     /**
      * HelloWorld
      */
@@ -27,21 +26,21 @@ public class UserTest {
     public void testSelect() {
         try {
 
-            //1.¼ÓÔØÅäÖÃÎÄ¼ş
+            //1.åŠ è½½é…ç½®æ–‡ä»¶
             Reader config = Resources.getResourceAsReader("mybatis-config.xml");
 
-            //2.µÃµ½»á»°¹¤³§
+            //2.å¾—åˆ°ä¼šè¯å·¥å‚
             SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(config);
 
-            //3.´´½¨»á»°
+            //3.åˆ›å»ºä¼šè¯
             SqlSession session = factory.openSession();
 
             User u = session.selectOne("findByID", 1);
-//            selectOne(mapperµÄid, ´«ÈëµÄ²ÎÊı)
+//            selectOne(mapperçš„id, ä¼ å…¥çš„å‚æ•°)
 
-            session.commit();//Ìá½»ÊÂÎñ
+            session.commit();//æäº¤äº‹åŠ¡
 
-            session.close();//¹Ø±Õ»á»°
+            session.close();//å…³é—­ä¼šè¯
 
             System.out.println(u.toString());
         } catch (IOException e) {
@@ -52,7 +51,7 @@ public class UserTest {
 
 
     /**
-     * ĞÂÔö
+     * æ–°å¢
      */
     @Test
     public void testAdd() {
@@ -68,24 +67,24 @@ public class UserTest {
         UserDao userdao = new UserDaoImpl();
 
         userdao.addUser(u);
-        log.info("ĞÂÔö³É¹¦");
+        log.info("æ–°å¢æˆåŠŸ");
 
     }
 
 
     /**
-     * É¾³ı
+     * åˆ é™¤
      */
     @Test
     public void testDelete() {
         UserDao userdao = new UserDaoImpl();
         userdao.deleteUser(21);
-        log.info("É¾³ı³É¹¦");
+        log.info("åˆ é™¤æˆåŠŸ");
     }
 
 
     /**
-     * ¸üĞÂ
+     * æ›´æ–°
      */
     @Test
     public void testUpdate() {
@@ -96,7 +95,7 @@ public class UserTest {
     }
 
     /**
-     * ²éÑ¯È«²¿
+     * æŸ¥è¯¢å…¨éƒ¨
      */
     @Test
     public void findAll() {
@@ -108,7 +107,7 @@ public class UserTest {
     }
 
     /**
-     * Ä£ºı²éÑ¯
+     * æ¨¡ç³ŠæŸ¥è¯¢
      */
     @Test
     public void findUserLikeTest() {
@@ -120,7 +119,7 @@ public class UserTest {
     }
 
     /**
-     * ²ÎÊıÎªlist
+     * å‚æ•°ä¸ºlist
      */
     @Test
     public void findUserInTest() {
@@ -128,7 +127,7 @@ public class UserTest {
         List qlist = new ArrayList();
 
         qlist.add(1);
-//        ´«×Ö·û´®Ò²¿ÉÒÔ
+//        ä¼ å­—ç¬¦ä¸²ä¹Ÿå¯ä»¥
         qlist.add("10");
         qlist.add(20);
 
@@ -162,7 +161,7 @@ public class UserTest {
     }
 
     /**
-     * ²ÎÊıÎªMap,²¢·ÖÒ³
+     * å‚æ•°ä¸ºMap,å¹¶åˆ†é¡µ
      */
     @Test
     public void findUserMapTest() {

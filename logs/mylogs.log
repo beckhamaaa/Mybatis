@@ -26,3 +26,6 @@
 2018-05-25 10:54:49[com.torres.mybatis.test.logtest.LockBackTest] [main:0] - [INFO]  数组中的元素为:1
 2018-05-25 10:54:49[com.torres.mybatis.test.logtest.LockBackTest] [main:4] - [INFO]  数组中的元素为:2
 2018-05-25 10:54:49[com.torres.mybatis.test.logtest.LockBackTest] [main:4] - [INFO]  数组中的元素为:3
+2018-05-25 12:05:19[com.torres.mybatis.test.logtest.LockBackTest] [main:0] - [INFO]  数组中的元素为:1
+2018-05-25 12:05:19[com.torres.mybatis.test.logtest.LockBackTest] [main:3] - [INFO]  数组中的元素为:2
+2018-05-25 12:05:19[com.torres.mybatis.test.logtest.LockBackTest] [main:4] - [INFO]  数组中的元素为:3

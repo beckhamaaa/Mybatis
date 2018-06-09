@@ -10,16 +10,12 @@ import org.junit.Test;
 public class LockBackTest {
 
     @Test
-    public void test(){
-        int [] array=new int[]{1,2,3};
-        for(int i:array)
-        {
-
-        log.info("数组中的元素为:{}",i);
+    public void test() {
+        int[] array = new int[]{1, 2, 3};
+        for (int i : array) {
+            log.info("数组中的元素为:{}", i);
         }
     }
-
-
 
 
 }
